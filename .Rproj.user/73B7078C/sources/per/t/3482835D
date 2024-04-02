@@ -1,0 +1,26 @@
+{
+    "id": "3482835D",
+    "path": "~/Desktop/CAM/R/table_module.R",
+    "project_path": "R/table_module.R",
+    "type": "r_source",
+    "hash": "2128398597",
+    "contents": "",
+    "dirty": false,
+    "created": 1711579208527.0,
+    "source_on_save": false,
+    "relative_order": 8,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "5,38",
+        "scrollLine": "1"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1711580371,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1711580371507,
+    "read_only": false,
+    "read_only_alternatives": []
+}

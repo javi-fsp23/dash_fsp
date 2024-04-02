@@ -1,0 +1,86 @@
+body{
+  font-family: "Montserrat", sans-serif !important;}
+  
+/* panel to enter*/
+  .panel-auth {
+    background: white;/*url(logoc.png);*/ 
+    background-size 100% 100%; 
+    height:100%; width: 100%;
+    background-position: center center;
+    background-size: cover; 
+    background-repeat: no-repeat;}
+
+.btn-primary {
+  color: #fff;
+  border-radius:20px; 
+  font-weight: 600;
+  background-color: #1788d3; 
+  border-color: #1788d3; !important } 
+    
+.btn-primary:hover { 
+  color: #fff; 
+  border-radius:20px;
+  background-color: #00508c; 
+  border-color: #00508c; !important }
+        
+.panel-primary {
+  font-family:Helvetica, Sans-serif; 
+  border-radius:20px;  
+  text-align:center;
+  color:#9ecc50; 
+  opacity: 0.78;
+  right: 76%;
+  border: 2px solid #1788d3;
+  z-index: 5;
+  position: absolute; 
+  width: 65%; } 
+      
+.form-control{
+  border-radius:10px;  
+  text-align:center; 
+  color:#10312b;  
+  border-color: #235B4E;}
+          
+.form-control:hover{
+  color:#10312b; 
+  border-color: #235B4E; 
+  background-color: #FEF4F0;}
+              
+.form-control:active{
+  color:#10312b;  
+  border-color: #10312b;
+  background-color: #ffffff;}
+                  
+ label#auth-user_id-label {
+       font-weight: 500;}
+            
+ label#auth-user_pwd-label{
+       font-weight: 500;}
+        
+.form-control {
+  border-radius: 10px;
+  text-align: center;
+  color: #10312b;
+  border: 2px solid #d9ebba;}
+          
+h3#auth-shinymanager-auth-head {
+  font-size: 18px !important;
+  margin: 15px 0px -5px 0px;}
+        
+.form-group.shiny-input-container {
+          margin: 0px 0px 7px 0px;}   
+        
+@media (max-width: 768px) {
+  .panel-primary {
+     font-family: "Inter", sans-serif;
+     border-radius: 20px;
+     text-align: center;
+     color: #9ecc50;
+     opacity: 0.78;
+     right: 50%;
+     border: 3px solid #1788d3;
+     z-index: 5;
+     position: absolute;
+     width: 41%;
+          }
+        }

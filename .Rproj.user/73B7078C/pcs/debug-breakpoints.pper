@@ -1,0 +1,96 @@
+{
+    "debugBreakpointsState": {
+        "breakpoints": [
+            {
+                "id": 0,
+                "path": "~/Desktop/captura/R/cars_table_module.R",
+                "line_number": 36,
+                "function_steps": "3,3,2,4,2,2",
+                "function_name": "id_table_module",
+                "state": 1,
+                "editor_state": 1,
+                "editor_line_number": 36,
+                "is_pending_debug_completion": false,
+                "needs_updated_steps": false,
+                "type": 0,
+                "is_package_breakpoint": false,
+                "package_name": ""
+            },
+            {
+                "id": 1,
+                "path": "~/Desktop/captura/R/car_delete_module.R",
+                "line_number": 33,
+                "function_steps": "",
+                "function_name": "id_delete_module",
+                "state": 2,
+                "editor_state": 2,
+                "editor_line_number": 33,
+                "is_pending_debug_completion": false,
+                "needs_updated_steps": false,
+                "type": 0,
+                "is_package_breakpoint": false,
+                "package_name": ""
+            },
+            {
+                "id": 2,
+                "path": "~/Desktop/captura/R/car_delete_module.R",
+                "line_number": 32,
+                "function_steps": "",
+                "function_name": "id_delete_module",
+                "state": 2,
+                "editor_state": 2,
+                "editor_line_number": 32,
+                "is_pending_debug_completion": false,
+                "needs_updated_steps": false,
+                "type": 0,
+                "is_package_breakpoint": false,
+                "package_name": ""
+            },
+            {
+                "id": 4,
+                "path": "~/Desktop/captura/R/id_edit_module.R",
+                "line_number": 198,
+                "function_steps": "",
+                "function_name": "id_edit_module",
+                "state": 2,
+                "editor_state": 2,
+                "editor_line_number": 198,
+                "is_pending_debug_completion": false,
+                "needs_updated_steps": true,
+                "type": 0,
+                "is_package_breakpoint": false,
+                "package_name": ""
+            },
+            {
+                "id": 9,
+                "path": "~/Desktop/CAM/ui.R",
+                "line_number": 4,
+                "function_steps": "",
+                "function_name": "toplevel",
+                "state": 1,
+                "editor_state": 1,
+                "editor_line_number": 4,
+                "is_pending_debug_completion": false,
+                "needs_updated_steps": false,
+                "type": 1,
+                "is_package_breakpoint": false,
+                "package_name": ""
+            },
+            {
+                "id": 11,
+                "path": "~/Desktop/CAM/ui.R",
+                "line_number": 11,
+                "function_steps": "",
+                "function_name": "toplevel",
+                "state": 1,
+                "editor_state": 1,
+                "editor_line_number": 11,
+                "is_pending_debug_completion": false,
+                "needs_updated_steps": false,
+                "type": 1,
+                "is_package_breakpoint": false,
+                "package_name": ""
+            }
+        ]
+    }
+}

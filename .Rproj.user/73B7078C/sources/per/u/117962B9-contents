@@ -1,0 +1,42 @@
+# define some basic credentials (on data.frame)
+credentials <- data.frame(
+  user = c("javi", "shinymanager"), # mandatory
+  password = c("javi", "12345"), # mandatory
+  start = c("2019-04-15"), # optinal (all others)
+  expire = c(NA, "2019-12-31"),
+  admin = c(FALSE, TRUE),
+  comment = "Simple and secure authentification mechanism 
+  for single ‘Shiny’ applications.",
+  stringsAsFactors = FALSE
+)
+
+library(shiny)
+library(shinymanager)
+
+ui <- fluidPage(
+  tags$h2("My secure application"),
+  verbatimTextOutput("auth_output"), br(),
+  textOutput("user_p"))
+
+# Wrap your UI with secure_app
+ui <- secure_app(ui)
+
+
+server <- function(input, output, session) {
+  
+  # call the server part
+  # check_credentials returns a function to authenticate users
+  res_auth <- secure_server( check_credentials = check_credentials(credentials))
+  
+  
+  output$auth_output <- renderPrint({
+    reactiveValuesToList(res_auth)$user
+  })
+  
+users<-reactive({ reactiveValuesToList(res_auth)$user})
+  # your classic server logic
+  
+output$textp<-renderPrint(users())
+}
+
+shinyApp(ui, server)
