@@ -7,7 +7,6 @@ con <- dbConnect(RSQLite::SQLite(), "patrimonial.db")
 semaforo<-read_semaforo()
 dbWriteTable(con, "cat_semaforo", semaforo, overwrite = TRUE)
 
-
 farmacias<-read_farmacias()
 #dbCreateTable(con, "cat_domicilio_unidades", farmacias)
 dbWriteTable(con, "cat_domicilio_unidades", farmacias, overwrite = TRUE)              
@@ -37,3 +36,7 @@ data_cam<-read_cam()
 #dbCreateTable(con, "data_cam", data_cam)
 column_types <- c(Asignacion = "DATETIME", Creacion = "DATETIME", Recepcion = "DATETIME", Cierre = "DATETIME")
 dbWriteTable(con, "data_cam", data_cam, overwrite = TRUE, row.names = FALSE, types = column_types)              
+
+data_user_cam<-read_user_cam()
+#dbCreateTable(con, "cat_user_cam", data_cam)
+dbWriteTable(con, "cat_user_cam", data_user_cam, overwrite = TRUE, row.names = FALSE, types = column_types)              

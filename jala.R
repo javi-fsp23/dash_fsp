@@ -73,6 +73,14 @@ ad<-dir_far %>% left_join(dir_cons) %>% left_join(farmacias) %>%
   select(unidad, dir_mapa)
 return(ad)}
 
+
+read_user_cam<-function(){
+conn <-  odbcConnectAccess2007("Z://Matriz/data/data.dll")
+tablas_conn<-sqlTables(conn, tableType = "TABLE")$TABLE_NAME
+users <- sqlFetch(conn, "UserData") 
+return(users)}
+
+
 read_cam<-function(){
   conn <-  odbcConnectAccess2007("Z://Matriz/data/LDBN.accdb")
   tablas_conn<-sqlTables(conn, tableType = "TABLE")$TABLE_NAME
@@ -129,7 +137,6 @@ mensaje_telegram<-function(mensaje){
   cat(mensaje, "\n")}
 
 
-
 separar_con_espacio <- function(texto) {
   caracteres_con_espacio <- character(0)
   for (i in seq(1, nchar(texto), by = 2)) {
@@ -139,24 +146,3 @@ separar_con_espacio <- function(texto) {
   return(paste(caracteres_con_espacio, collapse = " "))}
 
 
-
-# Conectarse a la base de datos
-
-#write.csv(IData, "base.csv" ) 
-
-uni<-unidades %>% group_by(unidad) %>% summarise(n=n()) 
-neg<-IData %>% group_by(negocio) %>% summarise(n=n()) 
-
-
-unidad<-IData %>% group_by(Unidad) %>% summarise(n=n())
-IData %>% mutate(Creación=as_date(Creación)) %>% filter(Creación==Sys.Date()) %>% nrow()
-
-
-
-
-# semaforo<-readxl::read_excel("data/semaforo.xlsx", sheet = "semaforo") %>%  distinct(incidente, color)
-# farmacias<-readxl::read_excel("data/Farmacias.xlsx") %>% tidyr::separate(Code, sep=",",c("lat", "long")) %>% 
-#   mutate(lat=as.numeric(lat), long=as.numeric(long))
-
-as<-IData %>% mutate(Recepcion=as_date(Recepcion)) %>%  filter(Recepcion==(Sys.Date()-days(1))) %>% left_join(semaforo) %>%left_join(iconos) %>% 
-  left_join(dir_far) %>% left_join(dir_cons) %>% left_join(farmacias)
