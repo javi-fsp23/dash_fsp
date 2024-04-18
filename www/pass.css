@@ -3,7 +3,7 @@ body{
   
 /* panel to enter*/
   .panel-auth {
-    background: white;/*url(logoc.png);*/ 
+    background: url(imagen_farm.jpg);
     background-size 100% 100%; 
     height:100%; width: 100%;
     background-position: center center;
@@ -15,19 +15,19 @@ body{
   border-radius:20px; 
   font-weight: 600;
   background-color: #1788d3; 
-  border-color: #1788d3; !important } 
+  border-color: #1788d3 !important; } 
     
 .btn-primary:hover { 
   color: #fff; 
   border-radius:20px;
   background-color: #00508c; 
-  border-color: #00508c; !important }
+  border-color: #00508c!important; }
         
 .panel-primary {
   font-family:Helvetica, Sans-serif; 
   border-radius:20px;  
   text-align:center;
-  color:#9ecc50; 
+  color:#759f2e; 
   opacity: 0.78;
   right: 76%;
   border: 2px solid #1788d3;
@@ -52,16 +52,16 @@ body{
   background-color: #ffffff;}
                   
  label#auth-user_id-label {
-       font-weight: 500;}
+       font-weight: 600;}
             
  label#auth-user_pwd-label{
-       font-weight: 500;}
+       font-weight: 600;}
         
 .form-control {
   border-radius: 10px;
   text-align: center;
   color: #10312b;
-  border: 2px solid #d9ebba;}
+  border: 2px solid #b7d97e;}
           
 h3#auth-shinymanager-auth-head {
   font-size: 18px !important;
@@ -75,7 +75,7 @@ h3#auth-shinymanager-auth-head {
      font-family: "Inter", sans-serif;
      border-radius: 20px;
      text-align: center;
-     color: #9ecc50;
+     color: #759f2e;
      opacity: 0.78;
      right: 50%;
      border: 3px solid #1788d3;
