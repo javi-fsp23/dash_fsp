@@ -11,8 +11,14 @@ ui<-fluidPage(
                          type="image/png", sizes="64x64")),
   # ----------------------------- Inicio ----------------------------------------------------------------------------------
   tabPanel(title="Directorio", value = "uno",
-  div( uiOutput("busca_1", inline=T), class="container_buscador"),
-  div(leafletOutput("Mapas_1", width = "100%", height = 600), class="container_map")
+       div(class="container_filter_map",
+            shinyWidgets::dropdown(icon = icon("gear"), width = "250px",status = "primary",
+                                   animate = animateOptions( exit = animations$fading_exits$fadeOutRightBig ),
+                 selectInput( inputId = "search_busines", label = "Negocio", selected=NULL, multiple = F,choices = iconos$negocio),
+                 selectInput( inputId = "search_size", label = "Módelo", selected=NULL, multiple = F, choices = tams ) )),
+       div(class="container_buscador_map", uiOutput("busca_1", inline=T)),
+  div(
+    shinycssloaders::withSpinner( leafletOutput("Mapas_1", width = "100%", height = 600)), class="container_map")
   )
   ))
 

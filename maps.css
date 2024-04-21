@@ -36,12 +36,20 @@
     background: transparent;
 }
 
-.container_buscador{
+.container_buscador_map{
     text-align: -webkit-right;
-    margin: -3px 0px -60px 0px;
+    margin: 11px 0px -60px 0px;
     position: relative;
     z-index: 4;}
     
+.container_filter_map{
+  position: relative;
+  z-index: 1001;
+  margin: -20px 0px -35px 0px;
+  top: 110px;
+  width: 60px;
+  left: -18px;}
+  
 .container_map{
     margin: 0px -14px 0px -14px;
 }    

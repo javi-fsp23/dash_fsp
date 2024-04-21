@@ -1,33 +1,29 @@
-
-library(DBI)
-library(RSQLite)
-library(DBI)
-
-con <- dbConnect(RSQLite::SQLite(), "C:/Users/javier.ruiz/Desktop/apps/CAM/patrimonial.db")
-
-dir<-con %>% 
-  dbGetQuery("SELECT * from mapa_dir md ;")
-
-bot_token <- "7018311523:AAEB-UhXqmcJVSvhwhwhtbL7rwVpt4bLFbM"
-mensaje_telegram<-function(mensaje){
-  chat_id <- "-1002029344439"#"1451164616"# 
-  future::future(Bot(token = bot_token)$sendMessage(chat_id=chat_id, text = mensaje, parse_mode = "Markdown"))
-  cat(mensaje, "\n")}
-
-icon<- function(icono, color_m ,color){
-  makeAwesomeIcon(icon= icono, 
-                  markerColor=color_m,
-                  iconColor  = color)
-  }
+icons<- function(icono, color_m, color, selec){
+  makeAwesomeIcon(icon= icono, library="fa",
+                  markerColor=color_m,spin = selec,
+                  iconColor= color)}
 
 
-filter_map_1<-function(filtro_uni){
+filter_map_1<-function(puntos,filtro_uni){
 if(is.null(filtro_uni) ){
-  dir<-NULL
-}else{
-  dir<-dir %>% filter(unidad==filtro_uni)
-}
+  puntos<-NULL
+}else{puntos<-puntos %>% filter(unidad==filtro_uni)}
+return(puntos)}
+
+
+filter_table<-function(dir,selec, selec_1){
+if(selec=="Unidad"){
+    dir<-dir %>% distinct(unidad, .keep_all = T)
+} else{
+    dir<-dir %>% filter(negocio==selec)} 
+  
+  if(selec_1=="Todo"){
+    dir<-dir
+  }else{
+    dir<-dir %>% filter(modelo_fcia==selec_1)
+  }
 return(dir)}
 
+ipablo <- makeIcon(iconUrl = "www/pablito.PNG", iconWidth = 32, iconHeight = 32)
+ipabloa <- makeIcon(iconUrl = "www/pablitoA.PNG", iconWidth = 32, iconHeight = 32)
 
-save(credentials, dir, mx, filter_map_1, icons, bot_token, mensaje_telegram, file = ".RData")

@@ -8,6 +8,8 @@ library(htmltools)
 library(sf)
 library(leaflet.extras)
 library(telegram.bot)
+library(shinyWidgets)
+library(future)
 
 # Turn off scientific notation
 options(scipen = 999)

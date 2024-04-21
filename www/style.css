@@ -153,6 +153,10 @@
       border: 1px solid #f5f9da;
       border-radius: 8px !important;}  
       
+.selectize-dropdown .selected {
+    background-color: #9ecc50;
+    color: #fff;}      
+      
   /*table*/
     div#DataTables_Table_0_length {
       color: #9ecc50;
