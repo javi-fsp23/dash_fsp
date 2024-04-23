@@ -36,11 +36,14 @@
     background: transparent;
 }
 
-.container_buscador_map{
+.container_searh_map{
     text-align: -webkit-right;
-    margin: 11px 0px -60px 0px;
-    position: relative;
-    z-index: 4;}
+    margin: 11px -10px -55px 0px;
+    position: relative;}
+    
+.search_map{
+    z-index: 4;
+    width: 200px;}
     
 .container_filter_map{
   position: relative;

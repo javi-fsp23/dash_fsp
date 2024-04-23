@@ -9,7 +9,7 @@ shinyServer( function(input, output, session) {
   })
   
   output$busca_1<-renderUI({
-          selectInput( inputId = "search_pharm", label = "", selected="-", multiple = F, width = "170px", choices = c("-", puntos) ) })
+          selectInput( inputId = "search_pharm", label = "", selected="-", multiple = F, width = "170px", choices = c("-", direc_fil()$unidad) ) }) 
   
   direc_fil<-reactive({req(input$search_busines)
     filter_table(dir,input$search_busines, input$search_size)
@@ -19,14 +19,14 @@ shinyServer( function(input, output, session) {
     dire<-direc_fil()
     leaflet() %>%setView( -100.34, 20.7, 4.5 ) %>% addTiles() %>%
       addPolygons(data = mx, weight = 2, fillOpacity = 0, color = '#e88b0c',  label = ~nom_ent ) %>%
-      addMarkers(data = dire, lat = ~lat, lng = ~long,  label = ~htmlEscape(nombre), icon = ipablo, 
-                 clusterOptions = markerClusterOptions(), 
-                 popup = paste(paste0("<div style='font-size: 17px; font-weight:bold; text-align: center; background: white; padding: 4px; border-radius: 4px;'>","Unidad ",dire$nombre,  "</div>"),
-                               dire$dir_mapa, "<br>"))
-      # addAwesomeMarkers(data = dire, lat = ~lat, lng = ~long,  label = ~htmlEscape(nombre), icon = awesomeIconList(icons(dire$icon_ncio, "green", dire$color, FALSE )), 
-      #                   clusterOptions = markerClusterOptions(), 
-      #                   popup = paste(paste0("<div style='font-size: 17px; font-weight:bold; text-align: center; background: white; padding: 4px; border-radius: 4px;'>","Unidad ",dire$nombre,  "</div>"),
-      #                                 "<b>", "Gerente de farmacia: ","</b>", dire$dir_mapa, "<br>")) #%>%
+      # addMarkers(data = dire, lat = ~lat, lng = ~long,  label = ~htmlEscape(nombre), icon = ipablo, 
+      #            clusterOptions = markerClusterOptions(), 
+      #            popup = paste(paste0("<div style='font-size: 17px; font-weight:bold; text-align: center; background: white; padding: 4px; border-radius: 4px;'>","Unidad ",dire$nombre,  "</div>"),
+      #                          dire$dir_mapa, "<br>"))
+      addAwesomeMarkers(data = dire, lat = ~lat, lng = ~long,  label = ~htmlEscape(nombre), icon = awesomeIconList(icons(dire$icon_ncio, "green", dire$color, FALSE )),
+                        clusterOptions = markerClusterOptions(),
+                        popup = paste(paste0("<div style='font-size: 17px; font-weight:bold; text-align: center; background: white; padding: 4px; border-radius: 4px;'>","Unidad ",dire$nombre,  "</div>"),
+                                      dire$dir_mapa, "<br>")) #%>%
       # addDrawToolbar(targetGroup='datos', position = "bottomleft",
       #   editOptions = editToolbarOptions(selectedPathOptions = selectedPathOptions()))
   })

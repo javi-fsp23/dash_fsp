@@ -22,7 +22,8 @@ map_dir<-function(dir_far, dir_cons, farmacias){
                                     "<b>", "Ger. de zona Consul: ","</b>", ger_zona_consul, "<br>",
                                     "<b>", "Tel. Ger. de zona Consul:: ","</b>", paste0("<a href=tel:+52", tel_ger_zona_consul,">", tel_ger_zona_consul, "</a>"), "<br>",
                                     "<b>", "Ger. siniestro consultorio: ","</b>", siniestro_consul, "<br>",
-                                    "<b>", "Tel. Ger. siniestro consultorio: ","</b>", paste0("<a href=tel:+52", tel_siniestro_consul,">", tel_siniestro_consul, "</a>"), "<br>")) %>% 
+                                    "<b>", "Tel. Ger. siniestro consultorio: ","</b>", paste0("<a href=tel:+52", tel_siniestro_consul,">", tel_siniestro_consul, "</a>"), "<br>", 
+                                    "<b>", "Dirección: ","</b><a href=", paste0(link), ">", paste0(dir_fcia), "</a><br>")) %>% 
     select(unidad,negocio, modelo_fcia, nombre_fcia, lat, long, dir_mapa) %>% distinct(unidad,negocio, .keep_all = T) %>% mutate(nombre=paste0(unidad,": " ,nombre_fcia)) %>% 
     mutate(lat=as.numeric(lat), long=as.numeric(long))
   return(ad)}

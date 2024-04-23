@@ -5,9 +5,9 @@ account: fsanpablo
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 11776872
-bundleId: 8522220
+bundleId: 8531747
 url: https://fsanpablo.shinyapps.io/directorio/
 version: 1
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: data.db|db.R|ivo.html|jala.R|patrimonial.db
+ignoredFiles: data.db|db.R|ivo.html|jala.R|patrimonial.db|restan.csv
