@@ -1,0 +1,101 @@
+  .incidente-cont-metrica{
+    color: #c8dc33;
+    margin: -7px -14px 4px -14px;
+    position: relative;
+    z-index: 3;}
+  
+  #incidente-cont-metrica-vic{
+  margin: 0px -14px -60px -14px;
+  z-index:-1;  
+  position: absolute;}
+  
+  .down-icon{
+    color:#454746; }
+  
+  .incidente-down{
+     margin: -3px 0px 0px 8px;}
+     
+   .conten-letras{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: center;}
+  
+  .incidente-metrica{
+    margin-top: -10px; 
+    font-weight: bold;
+    color: #c8dc33;
+    text-align: start;} 
+  
+  .incidente-letra{
+    color: #c8dc33;
+    margin: 3px 0px 3px 0px; }
+  
+  .incidente-columna{
+    padding: 0 1em 1em 1em;
+    text-align: center;
+    border-radius:15px;  }
+  
+  .incidente-icon{ 
+    z-index: 0; 
+    opacity: 0.7; 
+    position: absolute; 
+    top: 5px; 
+    right: 17px; 
+    font-size:60px;
+    border-radius: 50%;
+    display: grid;
+    color: #e6ef9d;
+    transition: 0.5s; }  
+  
+  .inciden-graph{
+    margin: -22px 0px -4px 0px;
+    padding: 0px;}
+    
+  .inciden-compa{
+    text-align: center;
+    position: relative;
+    color: #454746;
+    top: 3px;}
+    
+  .incidente-numbers{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 5;
+    color: #c8dc33;}  
+      
+  .incidente-media{
+    color: #c8dc33;
+    margin: 4px 0px 0px 0px;}
+    
+    .incidente-card:hover .incidente-icon {  
+     color:#fff;
+     opacity: 0.9;
+     color: #e6ef9d;
+     font-size:68px;}
+  
+    .incidente-card_1{
+      margin: -3px -3px 21px -3px;
+      display: flex;
+      height: 60px;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: baseline; }
+  
+    .incidente-icon_1{ 
+      z-index: 0;
+      opacity: 0.3;
+      position: relative;
+      top: 1px;
+      right: -25px;
+      font-size: 45px;
+      border-radius: 50%;
+      display: grid;
+      transition: 0.5s; }                   
+      
+    
+.highcharts-container{
+  margin: 0px -7px 0px -7px !important;
+  padding: 0px !important;
+}   

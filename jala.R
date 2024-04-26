@@ -4,29 +4,13 @@ mensaje_telegram<-function(mensaje){
   future::future(Bot(token = bot_token)$sendMessage(chat_id=chat_id, text = mensaje, parse_mode = "Markdown"))
   cat(mensaje, "\n")}
 
-library(DBI)
-library(RSQLite)
-library(dplyr)
-library(stringr)
 
-con <- dbConnect(RSQLite::SQLite(), "C:/Users/javier.ruiz/Desktop/apps/CAM/patrimonial.db")
-dir<-con %>% dbGetQuery("SELECT unidad, md.negocio, modelo_fcia, nombre_fcia, lat, long, dir_mapa, nombre, mdi.icon_ncio, mdi.color  
-FROM mapa_dir md
-left join mapa_dir_icons mdi on md.negocio= mdi.negocio  ;")
-
-iconos<-con %>%dbGetQuery("SELECT * from mapa_dir_icons mdi;")
-tams<-array(c("Todo", unique(dir$modelo_fcia)[1:6]))
-
-credentials <- data.frame(
-  user = c("javi", "Patrimonial",  "matias"),
-  password = c(scrypt::hashPassword("javi"), scrypt::hashPassword("sanpablo2024"), scrypt::hashPassword("mati2024*")),
-  is_hashed_password = TRUE,
-  comment = c("super", "user_1", "user_2"),
-  stringsAsFactors = FALSE)
-
-puntos=dir %>% distinct(unidad) %>% pull() 
-iconos<-rbind(c("Unidad", "", ""), iconos)
-tams<-array(c("Todo", unique(dir$modelo_fcia)[1:6]))
-
-save(credentials, dir, mx, filter_map_1, icons, bot_token, mensaje_telegram, iconos, tams,filter_table, puntos, file = ".RData")
-
+con_db %>% DBI::dbGetQuery(
+  "
+SELECT subconsulta.unidad,nombre_fcia, lat, long, dc.zona
+FROM (
+    SELECT cdu.unidad, cdu.nombre_fcia,  cdu.lat, cdu.long, COUNT(*) AS cantidad
+    FROM cat_domicilio_unidades cdu 
+    GROUP BY cdu.unidad, cdu.lat, cdu.long
+) AS subconsulta
+LEFT JOIN dir_consultorio dc ON subconsulta.unidad = dc.unidad;")

@@ -136,14 +136,77 @@
     font-weight: 600;
     background-color: #ed7272;
     border-color: #ed7272;}
+
+ /*date range*/    
+  .form-control {
+    border: 2px solid #9ecc50;
+    border-radius: 3px;
+    color: #454746;
+  }
     
+  .dropdown-menu {
+    border: 2px solid #9ecc50 !important;
+    border-radius: 5px !important;
+  }
+  
+  .datepicker table tr td.active:active, .datepicker table tr td.active.active, .datepicker table tr td.active.highlighted:active, .datepicker table tr td.active.highlighted.active {
+    color: #454746;
+    background-color: #9ecc50;
+    border-color: #9ecc50;
+}
+
+.datepicker table tr td span.active:active, .datepicker table tr td span.active.active, .datepicker table tr td span.active:hover:active, .datepicker table tr td span.active.active:hover, .datepicker table tr td span.active.disabled:active, .datepicker table tr td span.active.disabled.active, .datepicker table tr td span.active.disabled:hover:active, .datepicker table tr td span.active.disabled.active:hover{
+    color: #454746;
+    background-color: #9ecc50;
+    border-color: #9ecc50;
+}  
+
+
+.datepicker table tr td span.active:active, .datepicker table tr td span.active.active, .datepicker table tr td span.active:hover:active, .datepicker table tr td span.active.active:hover, .datepicker table tr td span.active.disabled:active, .datepicker table tr td span.active.disabled.active, .datepicker table tr td span.active.disabled:hover:active, .datepicker table tr td span.active.disabled.active:hover {
+    color: #454746;
+    background-color: #9ecc50;
+    border-color: #9ecc50;
+}
+
+.datepicker .datepicker-switch, .datepicker .prev, .datepicker .next, .datepicker tfoot tr th{
+   color: #454746;
+    background-color: #9ecc50;
+    border-color: #9ecc50;
+}
+
+.input-group-addon {
+    background-color: #9ecc50;
+    border: 1px solid #9ecc50;
+}
+
+/*control switch*/
+
+.bootstrap-switch{
+    border-color: #cae8ee;}
+    
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary, .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary {
+    background: #9ecc50;
+    border-color: #9ecc50;
+    color: #454746;}
+    
+    
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default, .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default {
+    color: #454746;
+    border-left: 2px solid #cae8ee;
+}
+   
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default, .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default {
+    background: #cae8ee;
+    color: rgba(0, 0, 0, 0.87);
+}
+
 /*select input*/ 
 .selectize-input{
   font-family: "Montserrat", sans-serif;
   border-radius: 10px;
   text-align: center;
-  color: #10312b;
-  border: 2px solid #d9ebba;}
+  color: #454746;
+  border: 2px solid #9ecc50;}
    
 .selectize-dropdown .active {
     color: #454746;
